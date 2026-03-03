@@ -93,29 +93,16 @@ Displays:
 
 ---
 
-## 🔮 Future Improvements
-
-* 🌙 Dark / Light Mode Toggle
-* 📄 Pagination
-* 🗂️ Category Filters
-* 🔔 Toast Notifications
-* ⭐ Separate Favorites Page
-* 🚀 Deployment (Netlify / Vercel)
-
 ---
 
 ## 👨‍💻 Author
 
 **Sameer Khuhro**
-Frontend Developer | Microsoft Learn Student Ambassador
+Frontend Developer 
 
 ---
 
-## 📌 Project Status
 
-✅ Completed
-🚀 Ready for Portfolio
-💼 Suitable for Junior Frontend Developer Showcase
 
 ---
 
