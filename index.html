@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recipe App</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                    <h1>Recipe App</h1>
+                </div>
+                <form action>
+                    <input type="text" placeholder="Search for recipes.... "
+                        class="searchBox">
+                    <button type="submit" class="searchBtn">Search</button>
+                    <ul class="suggestions-dropdown" id="suggestions-dropdown"></ul>
+                </form>
+                <div class="nav-actions">
+                    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark and light mode">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button type="button" class="favorites-toggle" id="favorites-toggle" aria-label="Show favorite recipes">
+                        <i class="fa-solid fa-heart"></i> Favorites
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1><i class="fas fa-bowl-food"></i> Welcome to Recipe App</h1>
+                <p>
+                    Discover delicious recipes from around the world.
+                    Search your favorite meal and explore ingredients & instructions instantly.
+                </p>
+
+                <!-- <div class="suggestions">
+                    <span>Try searching like:</span>
+                </div> -->
+            </section>
+
+            <section id="special-recipe-section">
+                <h2 class="special-recipe-heading">Today's Special Recipe 🍽️</h2>
+                <div class="recipe-container"></div>
+            </section>
+
+            <section id="search-results-section" style="display: none;">
+                <h2 class="special-recipe-heading" id="search-results-heading">Search Results for: </h2>
+                <div class="recipe-container" id="search-results-container"></div>
+                <div class="pagination" id="pagination-controls"></div>
+            </section>
+
+            <section id="favorites-section" style="display: none;">
+                <h2 class="special-recipe-heading">Your Favorite Recipes</h2>
+                <div class="recipe-container" id="favorites-container"></div>
+            </section>
+
+            <div class="recipe-details">
+                <button type="button" class="recipe-closeBtn">
+                     <i class="fa-solid fa-circle-xmark"></i>
+                </button>
+               <div class="recipe-detials-content"></div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Recipe App</h3>
+                    <p>Discover delicious recipes from around the world with just one search.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Search Recipes</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Recipe App. All rights reserved.</p>
+                <small>Developed by Sameer Khuhro</small>
+            </div>
+        </footer>
+
+            <script src="script.js"></script>
+        </body>
+    </html>
