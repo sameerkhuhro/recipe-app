@@ -1,0 +1,40 @@
+name: Recipe App CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Login to ACR
+      run: |
+        docker login sameeracr786.azurecr.io \
+          --username ${{ secrets.ACR_USERNAME }} \
+          --password ${{ secrets.ACR_PASSWORD }}
+
+    - name: Build Docker Image
+      run: |
+        docker build -t sameeracr786.azurecr.io/recipe-app:v1 .
+
+    - name: Push Docker Image
+      run: |
+        docker push sameeracr786.azurecr.io/recipe-app:v1
+
+    - name: Deploy to Azure Container App
+      run: |
+        az containerapp update \
+          --name recipe-app \
+          --resource-group sameer-rg \
+          --image sameeracr786.azurecr.io/recipe-app:v1

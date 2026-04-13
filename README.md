@@ -65,6 +65,24 @@ docker push <registry-name>.azurecr.io/recipe-app:latest
 
 3. Set the app setting `WEBSITES_PORT` to `80` so Azure routes traffic to the nginx container correctly.
 
+## GitHub Actions Deployment
+
+A GitHub Actions workflow is included at `.github/workflows/deploy.yml`.
+
+Create these GitHub repository secrets before running it:
+
+- `AZURE_CREDENTIALS`
+- `ACR_LOGIN_SERVER`
+- `ACR_USERNAME`
+- `ACR_PASSWORD`
+- `AZURE_WEBAPP_NAME`
+
+The workflow:
+
+- Builds the Docker image
+- Pushes the image to Azure Container Registry
+- Deploys the image to Azure App Service
+
 ## Author
 
 Sameer Khuhro
