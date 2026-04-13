@@ -1,109 +1,70 @@
-# 🍽️ Recipe Finder Web App
+# Recipe Finder Web App
 
-A fully responsive Recipe Search Web Application built using **HTML, CSS, and JavaScript**.
-This app allows users to search for meals using a public API, view detailed recipes in a modal popup, and save their favorite recipes with a dynamic favorite counter using **localStorage**.
+A responsive recipe search app built with HTML, CSS, and JavaScript. It uses TheMealDB API to search meals, open recipe details in a modal, and save favorites in `localStorage`.
 
----
+## Features
 
-## 🚀 Live Features
+- Search recipes by name
+- Fetch meal data from TheMealDB
+- View ingredients and instructions in a popup
+- Add and remove favorites
+- Persist favorites with `localStorage`
+- Toggle dark and light theme
+- Responsive layout for desktop and mobile
 
-* 🔍 Search Recipes by Name
-* 📦 API Integration (TheMealDB)
-* 📖 View Full Recipe Details (Popup Modal)
-* ❤️ Add / Remove Favorites
-* 🔢 Dynamic Favorite Counter
-* 💾 Persistent Favorites using localStorage
-* 📱 Fully Responsive Design
-* 🎨 Modern Gradient UI
-* ⚡ Smooth Hover & Card Animations
+## Tech Stack
 
----
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Fetch API
+- LocalStorage
+- TheMealDB API
 
-## 🛠️ Technologies Used
+## Project Structure
 
-* HTML5
-* CSS3 (Flexbox & Grid)
-* JavaScript (ES6+)
-* Async/Await
-* Fetch API
-* LocalStorage
-* TheMealDB Public API
-
----
-
-## 🧠 How It Works
-
-1. User enters a recipe name.
-2. The app fetches data from **TheMealDB API**.
-3. Recipes are displayed dynamically as cards.
-4. Clicking "View Recipe" opens a detailed popup modal.
-5. Clicking ❤️ saves the recipe to favorites.
-6. Favorite count updates instantly.
-7. Favorites persist even after page refresh.
-
----
-
-## 📂 Project Structure
-
-```
-📁 Recipe-App
-│── index.html
-│── style.css
-│── script.js
-│── README.md
+```text
+recipe-app/
+|-- index.html
+|-- style.css
+|-- script.js
+|-- Dockerfile
+|-- nginx.conf
+|-- .dockerignore
+`-- README.md
 ```
 
----
+## Run Locally With Docker
 
-## 💡 Key Functionalities
+Build the image:
 
-### 🔹 Recipe Search
+```bash
+docker build -t recipe-app .
+```
 
-Uses Fetch API with async/await to retrieve meal data.
+Run the container:
 
-### 🔹 Dynamic DOM Rendering
+```bash
+docker run -d -p 8080:80 --name recipe-app recipe-app
+```
 
-Recipe cards are generated dynamically using JavaScript.
+Open the app at `http://localhost:8080`.
 
-### 🔹 Favorites System
+## Azure Deployment Notes
 
-* Stored in localStorage
-* Prevents duplicates
-* Toggle heart icon state
-* Dynamic count badge
+This project is containerized for Azure App Service or any other Azure container host.
 
-### 🔹 Modal Popup
+1. Build and push the image to a registry such as Azure Container Registry:
 
-Displays:
+```bash
+docker build -t <registry-name>.azurecr.io/recipe-app:latest .
+docker push <registry-name>.azurecr.io/recipe-app:latest
+```
 
-* Ingredients
-* Instructions
-* Recipe Title
+2. In Azure App Service, configure the app to use that image.
 
----
+3. Set the app setting `WEBSITES_PORT` to `80` so Azure routes traffic to the nginx container correctly.
 
-## 🎯 What I Learned
+## Author
 
-* Working with REST APIs
-* Handling asynchronous JavaScript
-* DOM manipulation
-* State management using localStorage
-* Building responsive layouts
-* Writing cleaner, modular JS functions
-
----
-
----
-
-## 👨‍💻 Author
-
-**Sameer Khuhro**
-Frontend Developer 
-
----
-
-
-
----
-
-### ⭐ If you like this project, consider giving it a star!
+Sameer Khuhro
